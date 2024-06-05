@@ -1,0 +1,27 @@
+# Copyright (c) 2024
+# Author: Tommy Breslein (github.com/tbreslein)
+# License: MIT
+
+[package]
+name = "hydrs"
+version = "0.1.0"
+edition = "2021"
+authors = [ "tbreslein <github.com/tbreslein>" ]
+description = "Library/framework for 1D-hydrodynamics simulations using Riemann solvers"
+repository = "https://github.com/tbreslein/hydrs/"
+documentation = "https://docs.rs/latest/hydrs/"
+# homepage = "https://github.com/tbreslein/hydrs/"
+readme = "README.md"
+license = "MIT"
+keywords = ["science", "physics", "hydrodynamics", "numerics"]
+categories = ["science", "mathematics"]
+
+[dependencies]
+faer = "0.19.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.dev.package.faer]
+opt-level = 3
